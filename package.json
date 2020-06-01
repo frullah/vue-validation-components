@@ -2,14 +2,18 @@
   "name": "@frullah/vue-validation-components",
   "version": "0.1.0",
   "private": false,
+  "files": [
+    "dist/*.js",
+    "src/**/*.{js,vue}"
+  ],
+  "main": "./dist/vueValidationComponent.common.js",
   "scripts": {
-    "build-bundle": "vue-cli-service build --target lib --name vueValidationComponent ./src/index.js",
+    "build": "vue-cli-service build --target lib --name vueValidationComponent ./src/index.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "flush-promises": "^1.0.2",
     "vee-validate": "^3.3.1",
     "vue": "^2.6.11"
   },
@@ -28,7 +32,8 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "flush-promises": "^1.0.2"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
