@@ -15,7 +15,7 @@ describe('FormWithValidation component', () => {
     expect(wrapper.vm.onSubmit).not.toBeCalled()
   })
 
-  it('should run onSsubmit on form submit', async () => {
+  it('should run onSubmit on form submit', async () => {
     const wrapper = shallowMount(FormWithValidation, {
       propsData: { onSubmit: jest.fn() },
       stubs: { ValidationObserver: ValidationObserverPass }
