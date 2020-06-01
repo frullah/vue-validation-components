@@ -25,23 +25,33 @@ describe('FormWithValidation component', () => {
     expect(wrapper.vm.onSubmit).toBeCalledTimes(1)
   })
 
-  it('have slot scope named invalid passed by ValidationObserver', () => {
-    [false, true].forEach(state => {
-      const wrapper = mount({
-        template: '<FormWithValidation :onSubmit="() => {}" v-slot="x"><test ref="x" v-bind="x"/></FormWithValidation>',
-        components: {
-          FormWithValidation,
-          test: { template: '<div/>' }
+  it('have slot scope', async () => {
+    const wrapper = mount(FormWithValidation, {
+      propsData: { onSubmit: jest.fn() },
+      scopedSlots: {
+        default: '<test v-bind="props"/>'
+      },
+      stubs: {
+        test: { name: 'test', template: '<div/>' },
+        ValidationObserver: {
+          template: '<div><slot :invalid="invalid"/></div>',
+          data: () => ({ invalid: false })
         }
-      }, {
-        stubs: {
-          ValidationObserver: {
-            template: `<div><slot :invalid="${state}"/></div>`
-          }
-        }
-      })
+      }
+    })
 
-      expect(wrapper.findComponent({ ref: 'x' }).vm.$attrs.invalid).toBe(state)
+    const testComponent = wrapper.findComponent({ name: 'test' })
+    expect(testComponent.vm.$attrs).toEqual({
+      invalid: false,
+      processing: false
+    })
+
+    const observer = wrapper.findComponent({ name: 'ValidationObserver' })
+    await wrapper.setData({ processing: true })
+    await observer.setData({ invalid: true })
+    expect(testComponent.vm.$attrs).toEqual({
+      invalid: true,
+      processing: true
     })
   })
 })

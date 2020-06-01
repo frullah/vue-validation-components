@@ -1,7 +1,7 @@
 <template>
   <ValidationObserver slim v-slot="{ handleSubmit, invalid }">
     <form ref="form" @submit.prevent="handleSubmit(onSubmitHandler)">
-      <slot :invalid="invalid"></slot>
+      <slot v-bind="{ invalid, processing}"></slot>
     </form>
   </ValidationObserver>
 </template>
