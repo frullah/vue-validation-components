@@ -4,8 +4,10 @@
   "private": false,
   "files": [
     "dist/*.js",
-    "src/**/*.{js,vue}"
+    "src/**/*.{js,vue}",
+    "types/*.d.ts"
   ],
+  "types": "types/index.d.ts",
   "main": "./dist/vueValidationComponent.common.js",
   "scripts": {
     "build": "vue-cli-service build --target lib --name vueValidationComponent ./src/index.js",

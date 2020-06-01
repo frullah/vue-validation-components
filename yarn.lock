@@ -830,6 +830,14 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@fajarullah/vue-validation-components@/home/frullah/projects/gitlab.com/frullah/vue-validation-components/fajarullah-vue-validation-components-v0.1.0.tgz":
+  version "0.1.0"
+  resolved "/home/frullah/projects/gitlab.com/frullah/vue-validation-components/fajarullah-vue-validation-components-v0.1.0.tgz#5a5cffcc7097b048775aa7392173d394de07a89e"
+  dependencies:
+    core-js "^3.6.5"
+    vee-validate "^3.3.1"
+    vue "^2.6.11"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
