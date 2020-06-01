@@ -1,6 +1,6 @@
 {
   "name": "@frullah/vue-validation-components",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
