@@ -1,6 +1,6 @@
 {
   "name": "@fajarullah/vue-validation-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "files": [
     "dist/*.js",
@@ -33,9 +33,9 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "flush-promises": "^1.0.2",
     "lint-staged": "^9.5.0",
-    "vue-template-compiler": "^2.6.11",
-    "flush-promises": "^1.0.2"
+    "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
