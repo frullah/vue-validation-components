@@ -4,6 +4,8 @@ Vue validation components is a Vue component combined with vee-validate.
 
 I made this for myself project that using the validation with vee-validate
 
+Tested with vue version 2.6.11
+
 ## Installation
 
 ### npm
