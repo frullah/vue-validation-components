@@ -1,5 +1,5 @@
 {
-  "name": "vue-validation-components",
+  "name": "@frullah/vue-validation-components",
   "version": "1.0.0",
   "private": false,
   "scripts": {
