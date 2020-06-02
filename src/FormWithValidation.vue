@@ -1,7 +1,7 @@
 <template>
-  <ValidationObserver slim v-slot="{ handleSubmit, invalid }">
+  <ValidationObserver ref="observer" slim v-slot="{ handleSubmit, invalid }">
     <form ref="form" @submit.prevent="handleSubmit(onSubmitHandler)">
-      <slot v-bind="{ invalid, processing}"></slot>
+      <slot v-bind="{ invalid, processing }"></slot>
     </form>
   </ValidationObserver>
 </template>
@@ -20,6 +20,9 @@ export default Vue.extend({
     processing: false
   }),
   methods: {
+    reset () {
+      this.$refs.observer.reset()
+    },
     async onSubmitHandler () {
       if (this.processing) return
 

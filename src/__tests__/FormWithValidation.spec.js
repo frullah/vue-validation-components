@@ -25,6 +25,21 @@ describe('FormWithValidation component', () => {
     expect(wrapper.vm.onSubmit).toBeCalledTimes(1)
   })
 
+  it.only('reset method call reset from observer', () => {
+    const observerReset = jest.fn()
+    const wrapper = shallowMount(FormWithValidation, {
+      propsData: { onSubmit: jest.fn() },
+      stubs: {
+        ValidationObserver: {
+          template: '<div><slot/></div>',
+          methods: { reset: observerReset }
+        }
+      }
+    })
+    wrapper.vm.reset()
+    expect(observerReset).toBeCalledTimes(1)
+  })
+
   it('have slot scope', async () => {
     const wrapper = mount(FormWithValidation, {
       propsData: { onSubmit: jest.fn() },
