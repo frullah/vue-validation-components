@@ -25,7 +25,7 @@ describe('FormWithValidation component', () => {
     expect(wrapper.vm.onSubmit).toBeCalledTimes(1)
   })
 
-  it.only('reset method call reset from observer', () => {
+  it('reset method call reset from observer', () => {
     const observerReset = jest.fn()
     const wrapper = shallowMount(FormWithValidation, {
       propsData: { onSubmit: jest.fn() },
