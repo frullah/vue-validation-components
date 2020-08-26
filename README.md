@@ -22,19 +22,19 @@ yarn add vue-validation-components
 
 ### FormWithValidation
 
-```typescript
-  /** props */
+```ts
+/** props */
 
-  // form submit callback
-  onSubmit: Function
+// form submit callback
+onSubmit: Function
 
 
-  /** slot props */
+/** slot props */
 
-  // form submit processing state
-  processing: boolean
+// form submit processing state
+processing: boolean
 
-  // invalid form state, derived from vee-validate ValidationObserver
-  invalid: boolean
+// invalid form state, derived from vee-validate ValidationObserver
+invalid: boolean
 
 ```
