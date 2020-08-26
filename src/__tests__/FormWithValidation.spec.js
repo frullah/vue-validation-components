@@ -1,5 +1,5 @@
 import FormWithValidation from '../FormWithValidation.vue'
-import { mount, shallowMount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import flushPromises from 'flush-promises'
 import { ValidationObserverPass } from '@test/unit/mocks/components'
 
@@ -41,7 +41,7 @@ describe('FormWithValidation component', () => {
   })
 
   it('have slot scope', async () => {
-    const wrapper = mount(FormWithValidation, {
+    const wrapper = shallowMount(FormWithValidation, {
       propsData: { onSubmit: jest.fn() },
       scopedSlots: {
         default: '<test v-bind="props"/>'
