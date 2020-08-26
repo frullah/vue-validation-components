@@ -14,11 +14,6 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vee-validate": "^3.3.1",
-    "vue": "^2.6.11"
-  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.4.0",
     "@vue/cli-plugin-eslint": "^4.4.0",
@@ -35,7 +30,9 @@
     "eslint-plugin-vue": "^6.2.2",
     "flush-promises": "^1.0.2",
     "lint-staged": "^9.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vee-validate": "^3.3.1",
+    "vue": "^2.6.11"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
