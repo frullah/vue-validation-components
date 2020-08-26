@@ -4,12 +4,8 @@
 name: Node.js Package
 
 on:
-  push:
-    branches: [ master ]
-    tags:
-      - v*
-  pull_request:
-    branches: [ master ]
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -19,9 +15,10 @@ jobs:
       - uses: actions/setup-node@v1
         env:
           node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
       - run: yarn install
       - run: yarn test:unit
       - run: yarn build
       - run: yarn publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.YARN_TOKEN }}
