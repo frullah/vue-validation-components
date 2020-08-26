@@ -4,8 +4,12 @@
 name: Node.js Package
 
 on:
-  release:
-    types: [created]
+  push:
+    branches: [ master ]
+    tags:
+      - v*
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build:
@@ -16,10 +20,13 @@ jobs:
         uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: install
-      - uses: borales/actions-yarn@v2.0.0
+      - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: test:unit
-      - uses: borales/actions-yarn@v2.0.0
+      - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: publish
           auth-token: ${{ secrets.NPM_TOKEN }}
