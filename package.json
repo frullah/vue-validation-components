@@ -31,7 +31,7 @@
     "flush-promises": "^1.0.2",
     "lint-staged": "^10.4.0",
     "vue-template-compiler": "^2.6.11",
-    "vee-validate": "^3.4.0",
+    "vee-validate": "^3.4.1",
     "vue": "^2.6.11"
   },
   "gitHooks": {
